@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template" target-language="pl">
+    <body>
+      <trans-unit id="3b8e1b9ae5de465ff6888c3fc8f647f2d906da25" datatype="html">
+        <source>Help</source>
+        <target>Pomoc</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navigation/components/nav-bar/nav-bar.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description"> Button that navigates the user to the Help Center</note>
+        <note priority="1" from="meaning">menu item </note>
+      </trans-unit>
+      <trans-unit id="d99c7e80a7986028eb3030038a150dfd0e3eedf6" datatype="html">
+        <source>Learn</source>
+        <target>Poznaj</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navigation/components/nav-bar/nav-bar.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description"> Button that navigates the user to the Learning Portal</note>
+        <note priority="1" from="meaning">menu item </note>
+      </trans-unit>
+      <trans-unit id="07280bed443643ff9352b28953028501b2cebb4d" datatype="html">
+        <source>Website</source>
+        <target>Strona internetowa</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navigation/components/nav-bar/nav-bar.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <note priority="1" from="description"> Button that navigates the user back to the website</note>
+        <note priority="1" from="meaning">menu item </note>
+      </trans-unit>
+      <trans-unit id="92eee6be6de0b11c924e3ab27db30257159c0a7c" datatype="html">
+        <source>Home</source>
+        <target>Strona główna</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navigation/components/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ee89569774bec870776d7f4f91559838c225df53" datatype="html">
+        <source>Wallets</source>
+        <target>Portfele</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navigation/components/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="add4cd82e3e38a3110fe67b3c7df56e9602644ee" datatype="html">
+        <source>Transactions</source>
+        <target>Transakcje</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navigation/components/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fdf02214e10ee7e21c4bb247e79765bffc2d28ad" datatype="html">
+        <source>Price alerts</source>
+        <target>Alerty cenowe</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navigation/components/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1acbff68a5815643dd67adaaf4949438635d02b8" datatype="html">
+        <source>Promotions</source>
+        <target>Promocje</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navigation/components/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6708e63abc5a194863ea95e68f4b8c798034c1fc" datatype="html">
+        <source>Exchange</source>
+        <target>Giełda</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navigation/components/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="121cc5391cd2a5115bc2b3160379ee5b36cd7716" datatype="html">
+        <source>Settings</source>
+        <target>Ustawienia</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navigation/components/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="69703274543d03e3dcf78103d49d441c84f72252" datatype="html">
+        <source>Help Center</source>
+        <target>Centrum Pomocy</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navigation/components/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">109</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5d22c795daf43877a5f708dca2bccd549eb0471d" datatype="html">
+        <source>Sign out</source>
+        <target>Wyloguj</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navigation/components/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">118</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6363e0f9c9b8bda08288035cd7e175fdd716ebaf" datatype="html">
+        <source>API key created</source>
+        <target>Utworzono klucz interfejsu API</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/security-centre/components/api-key-created/api-key-created.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">title</note>
+      </trans-unit>
+      <trans-unit id="a8059e31694578c1b0344a76a345357dd60e8f01" datatype="html">
+        <source>Warning</source>
+        <target>Ostrzeżenie</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/security-centre/components/api-key-created/api-key-created.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">label</note>
+      </trans-unit>
+      <trans-unit id="359a7921b68bd8ca45d715bb8e6883d4f1f27784" datatype="html">
+        <source>Anyone who has these credentials can access your account.</source>
+        <target>Każda osoba dysponująca tymi poświadczeniami może uzyskać dostęp do Twojego rachunku.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/security-centre/components/api-key-created/api-key-created.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="description">Relates to API keys</note>
+        <note priority="1" from="meaning">copy</note>
+      </trans-unit>
+      <trans-unit id="74948afaefc8c99a7e294cad87564eb16007d014" datatype="html">
+        <source>Make sure to keep them secret.</source>
+        <target>Pamiętaj, aby zachować je w tajemnicy.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/security-centre/components/api-key-created/api-key-created.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">Relates to API keys</note>
+        <note priority="1" from="meaning">copy</note>
+      </trans-unit>
+      <trans-unit id="ba603e0b4c86d3e947ce75d14a2666d249561c6c" datatype="html">
+        <source>Key ID</source>
+        <target>Identyfikator klucza</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/security-centre/components/api-key-created/api-key-created.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description">Relates to API keys</note>
+        <note priority="1" from="meaning">label</note>
+      </trans-unit>
+      <trans-unit id="012a235d3c97f73841c88ffb0ecbde6371688a83" datatype="html">
+        <source>Secret</source>
+        <target>Tajny</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/security-centre/components/api-key-created/api-key-created.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <note priority="1" from="description">Relates to API keys</note>
+        <note priority="1" from="meaning">label</note>
+      </trans-unit>
+      <trans-unit id="8dd413cee2228118c536f503709329a4d1a395e2" datatype="html">
+        <source>Done</source>
+        <target>Gotowe</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/security-centre/components/api-key-created/api-key-created.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">button</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
