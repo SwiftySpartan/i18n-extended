@@ -14,11 +14,7 @@ export class SmartTranslate {
   //Private
   private _loadTranslationFile() {
     const t =`raw-loader!${this.translateFilePath}`;
-    console.log(t);
-    console.log('raw-loader!../../../../wallet/src/locale/fr/wallet.xlf')
-    console.log(t === 'raw-loader!../../../../wallet/src/locale/fr/wallet.xlf')
     const file = require(t);
-    console.log(file);
     const parseString = require('xml2js').parseString;
     parseString(file, (err: any, result: any) => {
       this.translations = [];
