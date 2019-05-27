@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestComponent implements OnInit {
   setTranslateText: (text: string) => {};
+  translate: (text: string) => {};
 
   constructor() {
     this.setTranslateText('test2')
@@ -16,6 +17,9 @@ export class TestComponent implements OnInit {
   }
 
   test() {
-    this.setTranslateText('i love this cli version 2')
+    this.setTranslateText('i love this cli version 2');
+    this.setTranslateText('i love this cli version 2');
+    this.translate(`oh my
+                           word it works!`)
   }
 }

@@ -11,18 +11,18 @@ fileManager.getFiles()
         {
             title: 'Extracting translations from files',
             task: () => {
-                return new rxjs.Observable(observer => {
-                    observer.next(`Extracting...`);
+                return new rxjs.Observable(observe => {
+                    observe.next(`Extracting...`);
                     fileManager.readFiles(val)
                     .subscribe({
                         next(subVal) {
-                            fileManager.initialTranslationsCahce.push(fileManager.getTsTranslationsFromFile(subVal.content));
-                            fileManager.initialTranslationsCahce = fileManager.initialTranslationsCahce.filter(item => item != null);
+                            if (fileManager.getTsTranslationsFromFile(subVal.content)) {
+                                fileManager.initialTranslationsCahce.push.apply(fileManager.initialTranslationsCahce, fileManager.getTsTranslationsFromFile(subVal.content));
+                                fileManager.initialTranslationsCahce = fileManager.initialTranslationsCahce.filter(item => item != null);
+                            }
                         },
                         complete() {
-                            setTimeout(() => {
-                                observer.complete();
-                            }, 1000);
+                            observe.complete();
                         }
                     })
                 });
@@ -62,6 +62,14 @@ fileManager.getFiles()
                     fileManager.appendi18nExtractionFiles(fileManager.i18nSourceFiles, fileManager.parsedDataList, observe);
                 })
             },
+        },
+        {
+            title: 'Index translation paths for i18n-extended service',
+            task: () => {
+                return new rxjs.Observable(observe => {
+                    fileManager.generateIndexFile(observe);
+                })
+            },
         }
     ]);
     tasks.run().catch(err => {
@@ -71,15 +79,3 @@ fileManager.getFiles()
     console.log(err);
     return;
 });
-
-
-// if (dataFromFile) {
-
-// }
-
-// fileManager.geti18nExtractionFiles().subscribe(extractionFiles => {
-//         observer.next(`Appending translations to source file`);
-//         fileManager.appendi18nExtractionFiles(extractionFiles, parsedDataList);
-//     });
-
-//fileManager.appendi18nExtractionFiles(extractionFiles, parsedDataList);

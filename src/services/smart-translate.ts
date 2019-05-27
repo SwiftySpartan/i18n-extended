@@ -27,17 +27,7 @@ export class SmartTranslate {
     });
   }
 
-  // Public
-  public setFilePath(path: string) {
-    this.translateFilePath = path;
-    try {
-      this._loadTranslationFile();
-    } catch (e) {
-      console.error(e);
-    }
-  }
-
-  public getText(text: string) {
+  public translate(text: string) {
     if (!this.translations) {
       console.warn('Cannot find translation file');
       return text;
