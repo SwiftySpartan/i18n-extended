@@ -8,37 +8,7 @@ var SmartTranslate = /** @class */ (function () {
     function SmartTranslate() {
     }
     //Private
-    SmartTranslate.prototype._loadTranslationFile = function () {
-        var _this = this;
-        var t = "raw-loader!" + this.translateFilePath;
-        console.log(t);
-        console.log('raw-loader!../../../../wallet/src/locale/fr/wallet.xlf');
-        console.log(t === 'raw-loader!../../../../wallet/src/locale/fr/wallet.xlf');
-        var file = require(t);
-        console.log(file);
-        var parseString = require('xml2js').parseString;
-        parseString(file, function (err, result) {
-            _this.translations = [];
-            for (var _i = 0, _a = result.xliff.file[0].body[0]['trans-unit']; _i < _a.length; _i++) {
-                var item = _a[_i];
-                _this.translations.push({
-                    source: item.source,
-                    target: item.target
-                });
-            }
-        });
-    };
-    // Public
-    SmartTranslate.prototype.setFilePath = function (path) {
-        this.translateFilePath = path;
-        try {
-            this._loadTranslationFile();
-        }
-        catch (e) {
-            console.error(e);
-        }
-    };
-    SmartTranslate.prototype.getText = function (text) {
+    SmartTranslate.prototype.translate = function (text) {
         if (!this.translations) {
             console.warn('Cannot find translation file');
             return text;
@@ -77,13 +47,10 @@ var SmartTranslateModule = /** @class */ (function () {
     return SmartTranslateModule;
 }());
 
-// 1) index and generate a map of information about angular.json config
-//    inside the node package
-// https://github.com/SwiftySpartan/Angular-1.5-cli
-//https://medium.com/javascript-in-plain-english/typescript-with-node-and-express-js-why-when-and-how-eb6bc73edd5d
-// 2) Use static files generated in step 1 to provide db to
-//    smart-translate service
+// 1) Create a indexed file for the service to read and load into memory
+// 2) test, test, and test with a new angular project locally
 // 3) Finish smart-translate service and receive translations
+// 4) Construct README.md file and publish to the world!
 
 exports.SmartTranslate = SmartTranslate;
 exports.SmartTranslateModule = SmartTranslateModule;

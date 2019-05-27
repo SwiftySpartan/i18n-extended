@@ -36,7 +36,7 @@
     "prompts": "^2.1.0",
     "recursive-readdir": "^2.2.2",
     "reflect-metadata": "^0.1.8",
-    "rxjs": "^6.5.2",
+    "rxjs": "6.0.0",
     "xml2js": "^0.4.19",
     "yargs": "^13.2.4",
     "zone.js": "^0.8.26"

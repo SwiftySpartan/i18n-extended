@@ -4,7 +4,6 @@
   "description": "",
   "main": "dist/bundles/i18n-extended.umd.js",
   "scripts": {
-    "tsc": "tsc",
     "cleanup": "rimraf dist/bundles dist/src dist/index.d.ts dist/index.js dist/index.js.map dist/LICENCE dist/README.md",
     "bundling": "rollup -c",
     "minify": "uglifyjs dist/bundles/i18n-extended.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/i18n-extended.umd.min.js",
@@ -15,7 +14,7 @@
     "url": "git+https://github.com/SwiftySpartan/i18n-extended.git"
   },
   "bin": {
-    "i18n-extended": "./index.js"
+    "i18n-extended": "./cli/i18n-extended-cli.js"
   },
   "author": "Andrew Wormald",
   "license": "MIT",

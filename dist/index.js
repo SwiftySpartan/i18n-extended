@@ -1,9 +1,6 @@
 export * from './src/services/index';
-// 1) index and generate a map of information about angular.json config
-//    inside the node package
-// https://github.com/SwiftySpartan/Angular-1.5-cli
-//https://medium.com/javascript-in-plain-english/typescript-with-node-and-express-js-why-when-and-how-eb6bc73edd5d
-// 2) Use static files generated in step 1 to provide db to
-//    smart-translate service
+// 1) Create a indexed file for the service to read and load into memory
+// 2) test, test, and test with a new angular project locally
 // 3) Finish smart-translate service and receive translations
+// 4) Construct README.md file and publish to the world!
 //# sourceMappingURL=index.js.map

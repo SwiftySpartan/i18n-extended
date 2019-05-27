@@ -1,40 +1,15 @@
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 import { Injectable } from '@angular/core';
-import * as i0 from "@angular/core";
 var SmartTranslate = /** @class */ (function () {
     function SmartTranslate() {
     }
     //Private
-    SmartTranslate.prototype._loadTranslationFile = function () {
-        var _this = this;
-        var t = "raw-loader!" + this.translateFilePath;
-        console.log(t);
-        console.log('raw-loader!../../../../wallet/src/locale/fr/wallet.xlf');
-        console.log(t === 'raw-loader!../../../../wallet/src/locale/fr/wallet.xlf');
-        var file = require(t);
-        console.log(file);
-        var parseString = require('xml2js').parseString;
-        parseString(file, function (err, result) {
-            _this.translations = [];
-            for (var _i = 0, _a = result.xliff.file[0].body[0]['trans-unit']; _i < _a.length; _i++) {
-                var item = _a[_i];
-                _this.translations.push({
-                    source: item.source,
-                    target: item.target
-                });
-            }
-        });
-    };
-    // Public
-    SmartTranslate.prototype.setFilePath = function (path) {
-        this.translateFilePath = path;
-        try {
-            this._loadTranslationFile();
-        }
-        catch (e) {
-            console.error(e);
-        }
-    };
-    SmartTranslate.prototype.getText = function (text) {
+    SmartTranslate.prototype.translate = function (text) {
         if (!this.translations) {
             console.warn('Cannot find translation file');
             return text;
@@ -46,14 +21,11 @@ var SmartTranslate = /** @class */ (function () {
         });
         return result[0].target[0];
     };
-    SmartTranslate.decorators = [
-        { type: Injectable, args: [{
-                    providedIn: 'root'
-                },] },
-    ];
-    /** @nocollapse */
-    SmartTranslate.ctorParameters = function () { return []; };
-    SmartTranslate.ngInjectableDef = i0.defineInjectable({ factory: function SmartTranslate_Factory() { return new SmartTranslate(); }, token: SmartTranslate, providedIn: "root" });
+    SmartTranslate = __decorate([
+        Injectable({
+            providedIn: 'root'
+        })
+    ], SmartTranslate);
     return SmartTranslate;
 }());
 export { SmartTranslate };
