@@ -1,1 +1,1 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../src/services/index.ts"],"names":[],"mappings":"AAAA,cAAc,mBAAmB,CAAA;AACjC,cAAc,0BAA0B,CAAA","sourcesContent":["export * from './smart-translate'\nexport * from './smart-translate.module'"]}
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../src/services/index.ts"],"names":[],"mappings":"AAAA,cAAc,iBAAiB,CAAA;AAC/B,cAAc,wBAAwB,CAAA","sourcesContent":["export * from './i18n-extended'\nexport * from './i18n-extended.module'"]}

@@ -1,2 +1,2 @@
-export * from './smart-translate'
-export * from './smart-translate.module'
+export * from './i18n-extended'
+export * from './i18n-extended.module'

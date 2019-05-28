@@ -1,8 +1,11 @@
 {
-  "name": "@swiftyspartan/i18n-extended",
-  "version": "1.0.1",
+  "name": "@andrewwormald/i18n-extended",
+  "version": "1.0.5",
   "description": "",
   "main": "dist/bundles/i18n-extended.umd.js",
+  "bin": {
+    "i18n-extended": "./cli/i18n-extended-cli.js"
+  },
   "scripts": {
     "cleanup": "rimraf dist/bundles dist/src dist/index.d.ts dist/index.js dist/index.js.map dist/LICENCE dist/README.md",
     "bundling": "rollup -c",
@@ -12,9 +15,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SwiftySpartan/i18n-extended.git"
-  },
-  "bin": {
-    "i18n-extended": "./cli/i18n-extended-cli.js"
   },
   "author": "Andrew Wormald",
   "license": "MIT",
@@ -33,6 +33,7 @@
     "kleur": "^3.0.3",
     "listr": "^0.14.3",
     "prompts": "^2.1.0",
+    "recursive-readdir": "^2.2.2",
     "reflect-metadata": "^0.1.8",
     "rxjs": "6.0.0",
     "xml2js": "^0.4.19",
