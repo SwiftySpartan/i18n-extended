@@ -2,46 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="368b2f60-dc20-4286-b86c-9ead097740b5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/bundles/i18n-extended.umd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/bundles/i18n-extended.umd.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/cli/file-manager.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/cli/i18n-extended-cli.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.metadata.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.ngsummary.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended-translation-data.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended-translation-data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended-translation-data.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended-translation-data.ngsummary.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended.metadata.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended.module.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended.module.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended.module.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended.module.metadata.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended.module.ngfactory.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended.module.ngfactory.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended.module.ngfactory.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended.module.ngsummary.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended.ngsummary.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/index.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/index.metadata.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/index.ngsummary.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/i18n-extended-translation-data.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rollup.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/file-manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/file-manager.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -137,21 +98,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="1" column="39" lean-forward="true" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="39" />
+            <state relative-caret-position="26">
+              <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="3" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="208">
-                <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <first_editor>
+                <caret column="88" selection-start-column="88" selection-end-column="88" />
               </first_editor>
               <second_editor />
             </state>
@@ -342,11 +303,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/services" />
       <recent name="$PROJECT_DIR$/node_modules/@andrewwormald/i18m-extended" />
       <recent name="$PROJECT_DIR$/node_modules/@andrewwormald/i18n-extended" />
       <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/cli" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/dist/cli" />
@@ -416,12 +377,12 @@
       <workItem from="1558941569319" duration="17700000" />
       <workItem from="1558983036619" duration="5049000" />
       <workItem from="1559016857476" duration="178000" />
-      <workItem from="1559018098999" duration="2138000" />
+      <workItem from="1559018098999" duration="2304000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70208000" />
+    <option name="totallyTimeSpent" value="70374000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -702,20 +663,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="208">
-            <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="3" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="39" lean-forward="true" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="39" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor>
+            <caret column="88" selection-start-column="88" selection-end-column="88" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
