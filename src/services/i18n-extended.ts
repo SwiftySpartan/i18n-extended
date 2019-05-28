@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { i18nExtendedModule } from './i18n-extended-translation-data';
 
 declare const require: any;
+const files = require("./i18n-extended-translation-data");
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class i18nExtended {
   constructor() {}
 
   private getTranslationFile() {
-    return i18nExtendedModule.translationInterface.filter((item:string) => item.includes(`target-language="${this.language}"`))[0];
+    return files.getTranslationStrings().filter((item:string) => item.includes(`target-language="${this.language}"`))[0];
   }
 
   public setLanguage(langCode: string) {
