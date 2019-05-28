@@ -4,12 +4,16 @@ ___________
 ##### created by  Andrew Wormald
 ###### SwiftySpartan / @andrewwormald
 #
-
+##### Note:
+```text 
+    Official release starts at v1.1.1
+    All versions prior to 1.1.1 are depricated
+```
 ### Installation:
 ##### Step 1:
 ###### Navigate to your angular directory that has all your angular projects.
 ```bash
-    npm install i18n-extended --save
+    npm install i18n-extended@latest --save
 ```
 
 ##### Step 2:
