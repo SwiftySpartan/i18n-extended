@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="368b2f60-dc20-4286-b86c-9ead097740b5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/dist/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/dist/package.json" afterDir="false" />
@@ -59,22 +60,22 @@
     <session id="-1628849758">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
-          <entry key="project.open.time.1" value="5" />
+          <entry key="project.closed" value="10" />
+          <entry key="project.open.time.1" value="6" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="4" />
-          <entry key="JSON" value="36" />
+          <entry key="JSON" value="38" />
           <entry key="JavaScript" value="108" />
-          <entry key="Markdown" value="6" />
+          <entry key="Markdown" value="8" />
           <entry key="PLAIN_TEXT" value="55" />
           <entry key="SCSS" value="2" />
           <entry key="SourceMap" value="2" />
@@ -92,9 +93,9 @@
         <counts>
           <entry key="Bash" value="4" />
           <entry key="HTML" value="14" />
-          <entry key="JSON" value="275" />
+          <entry key="JSON" value="279" />
           <entry key="JavaScript" value="9620" />
-          <entry key="Markdown" value="1025" />
+          <entry key="Markdown" value="1088" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="TypeScript" value="1577" />
         </counts>
@@ -102,31 +103,31 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="52">
-              <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dist/README.md">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="52">
+              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="390">
-                <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+              <first_editor relative-caret-position="416">
+                <caret line="16" column="3" lean-forward="true" selection-end-line="68" selection-end-column="3" />
               </first_editor>
               <second_editor />
             </state>
@@ -134,43 +135,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cli/file-manager.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="554">
-              <caret line="181" column="17" lean-forward="true" selection-start-line="181" selection-start-column="17" selection-end-line="181" selection-end-column="17" />
-              <folding>
-                <element signature="e#424#920#0" />
-                <element signature="e#951#1616#0" />
-                <element signature="e#1665#1797#0" />
-                <element signature="e#1844#2940#0" />
-                <element signature="e#2976#3537#0" />
-                <element signature="e#3615#5616#0" />
-                <element signature="e#5660#6270#0" />
-                <element signature="e#6306#6451#0" />
-                <element signature="e#8238#8294#0" />
-                <element signature="e#8326#8441#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/src/cli/file-manager.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="178" column="103" lean-forward="true" selection-start-line="178" selection-start-column="103" selection-end-line="178" selection-end-column="103" />
-              <folding>
-                <element signature="e#424#920#0" />
-                <element signature="e#951#1616#0" />
-                <element signature="e#1665#1797#0" />
-                <element signature="e#1844#2940#0" />
-                <element signature="e#2976#3537#0" />
-                <element signature="e#3615#5616#0" />
-                <element signature="e#5660#6270#0" />
-                <element signature="e#6306#6451#0" />
-                <element signature="e#8238#8294#0" />
-                <element signature="e#8326#8441#0" />
-              </folding>
+        <entry file="file://$PROJECT_DIR$/dist/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="592">
+                <caret line="55" column="8" lean-forward="true" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -263,10 +234,10 @@
         <option value="$PROJECT_DIR$/dist/src/services/i18n-extended-translation-data.js" />
         <option value="$PROJECT_DIR$/src/cli/file-manager.js" />
         <option value="$PROJECT_DIR$/dist/src/cli/file-manager.js" />
-        <option value="$PROJECT_DIR$/dist/package.json" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/dist/README.md" />
+        <option value="$PROJECT_DIR$/dist/package.json" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -286,7 +257,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="2560" />
     <option name="height" value="1417" />
@@ -297,6 +268,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -308,6 +280,19 @@
               <item name="i18n-extended" type="b2602c69:ProjectViewProjectNode" />
               <item name="i18n-extended" type="462c0819:PsiDirectoryNode" />
               <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="i18n-extended" type="b2602c69:ProjectViewProjectNode" />
+              <item name="i18n-extended" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="i18n-extended" type="b2602c69:ProjectViewProjectNode" />
+              <item name="i18n-extended" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cli" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="i18n-extended" type="b2602c69:ProjectViewProjectNode" />
@@ -324,7 +309,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -418,18 +402,19 @@
       <workItem from="1559016857476" duration="178000" />
       <workItem from="1559018098999" duration="3660000" />
       <workItem from="1559030885390" duration="3349000" />
-      <workItem from="1559035270373" duration="2208000" />
+      <workItem from="1559035270373" duration="2550000" />
+      <workItem from="1559046628877" duration="108000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77287000" />
+    <option name="totallyTimeSpent" value="77737000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1429706" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14416203" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Learn" order="3" />
@@ -558,9 +543,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
           <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -592,9 +574,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -602,18 +581,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="554">
           <caret line="181" column="17" lean-forward="true" selection-start-line="181" selection-start-column="17" selection-end-line="181" selection-end-column="17" />
-          <folding>
-            <element signature="e#424#920#0" />
-            <element signature="e#951#1616#0" />
-            <element signature="e#1665#1797#0" />
-            <element signature="e#1844#2940#0" />
-            <element signature="e#2976#3537#0" />
-            <element signature="e#3615#5616#0" />
-            <element signature="e#5660#6270#0" />
-            <element signature="e#6306#6451#0" />
-            <element signature="e#8238#8294#0" />
-            <element signature="e#8326#8441#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -621,52 +588,40 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="178" column="103" lean-forward="true" selection-start-line="178" selection-start-column="103" selection-end-line="178" selection-end-column="103" />
-          <folding>
-            <element signature="e#424#920#0" />
-            <element signature="e#951#1616#0" />
-            <element signature="e#1665#1797#0" />
-            <element signature="e#1844#2940#0" />
-            <element signature="e#2976#3537#0" />
-            <element signature="e#3615#5616#0" />
-            <element signature="e#5660#6270#0" />
-            <element signature="e#6306#6451#0" />
-            <element signature="e#8238#8294#0" />
-            <element signature="e#8326#8441#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="182">
-            <caret line="7" column="8" lean-forward="true" selection-end-line="67" selection-end-column="3" />
+          <first_editor relative-caret-position="416">
+            <caret line="16" column="3" lean-forward="true" selection-end-line="68" selection-end-column="3" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="390">
-            <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+          <first_editor relative-caret-position="592">
+            <caret line="55" column="8" lean-forward="true" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
         </state>
       </provider>
     </entry>

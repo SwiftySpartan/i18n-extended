@@ -17,8 +17,9 @@ ___________
 ```
 
 ##### Step 2:
+###### You need to run the command in your angular project directory
 ```bash
-    i18n-extended --angularProjectPath="./projects/{{your project name}}"
+    i18n-extended
 ```
 
 ##### Step 3:
