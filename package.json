@@ -1,13 +1,10 @@
 {
   "name": "@andrewwormald/i18n-extended",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "description": "",
   "main": "dist/bundles/i18n-extended.umd.js",
   "scripts": {
-    "cleanup": "rimraf dist/bundles dist/src dist/index.d.ts dist/index.js dist/index.js.map dist/LICENCE dist/README.md",
-    "bundling": "rollup -c",
-    "minify": "uglifyjs dist/bundles/i18n-extended.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/i18n-extended.umd.min.js",
-    "build": "npm run cleanup && ngc && npm run bundling && npm run minify"
+    "i18n-extended":"i18n-extended"
   },
   "repository": {
     "type": "git",
@@ -49,10 +46,7 @@
     "@angular/common": "^6.1.0",
     "@angular/router": "^6.1.0",
     "@angular/platform-browser": "^6.1.10",
-    "rimraf": "^2.5.4",
-    "rollup": "^0.37.0",
-    "typescript": "~2.7.2",
-    "uglify-js": "^2.7.5"
+    "typescript": "~2.7.2"
   },
   "bugs": {
     "url": "https://github.com/SwiftySpartan/i18n-extended/issues"

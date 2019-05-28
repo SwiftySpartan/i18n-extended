@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../src/services/index.ts"],"names":[],"mappings":"AAAA,cAAc,iBAAiB,CAAA;AAC/B,cAAc,wBAAwB,CAAA","sourcesContent":["export * from './i18n-extended'\nexport * from './i18n-extended.module'"]}

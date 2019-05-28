@@ -1,69 +1,64 @@
-![logo](https://avatars1.githubusercontent.com/u/20083774?s=460&v=4)
+![logo]()
 ___________
 # i18n-extended
-###### created by  Andrew Wormald
-__________
+##### created by  Andrew Wormald
+###### SwiftySpartan / @andrewwormald
+#
 
 ### Installation:
 ##### Step 1:
+###### Navigate to your angular directory that has all your angular projects.
 ```bash
-npm install i18n-extended
+    npm install i18n-extended --save
 ```
 
 ##### Step 2:
-Ensure you are using routing as this directive works hand in hand with Agnular's Router.
 ```bash
-import { NgSmartTabsModule } from 'i18n-extended';
-
-@NgModule({
-  imports: [
-    NgSmartTabsModule,
-  ],
-})
+    i18n-extended --angularProjectPath="./projects/{{your project name}}"
 ```
 
 ##### Step 3:
-```bash
-<a ng-smart-tab>{{YOUR_TEXT}}</a>
+###### Navigate to the component you want to use this service in.
+```javascript
+   import { i18nExtended } from '@andrewwormald/i18n-extended';
 ```
 
-| Attribute        | Default      | Tpe  |
-| :------------- | :----------:| :-----:|
-| lineColor | '#EF476F' | string |
-| lineThickness | '1px' | string |
-| lineBorderRadius | '0px' | string |
-| isFollowLineInvisible     | false | boolean |
-| activeOnUrlMatch | null | string |
-| underlineSidePadding | 0 | number |
-| horizontalChangeSpeed | '1' | string |
-| verticalChangeSpeed | '1' | string |
-| opacityChangeSpeed | '1.25' | string |
-| widthChangeSpeed | '0.35s' | string |
-| zIndex | 1 | number |
-
-
-### For example:
-```html
-<a ng-smart-tab
-   activeOnUrlMatch="/path">{{YOUR_TEXT}}</a>
+##### Step 4:
+```typescript
+   class myComponent {
+        title: string;
+        
+        constructor(private translateService: i18nExtended) {
+            // This needs to match the <target-language> attribute value in the .xlf file>
+            this.translateService.setLanguage('fr');
+        }
+        
+        myMethod() {
+            // Calling `translateText()` will be part of marking the text for extraction
+            // as well as fetching the translated text at runtime. If nothing is found or if
+            // the text has not yet been translated, the provided text will be returned as is.  
+            this.title = this.translateService.translateText('I like i18n-extended!');
+        }
+   }
 ```
 
-```html
-<!-- The matching alogithim is a basic javascipt .contains()
- method and priorities direct matches. Thus only provide
- what is unique for that url/journey. -->
- 
-<a ng-smart-tab
-   activeOnUrlMatch="/path/">{{YOUR_TEXT}}</a>
-```
+##### Example:
+```typescript
+  import { i18nExtended } from '@andrewwormald/i18n-extended';
 
-```html
-<a ng-smart-tab
-   opacityChangeSpeed="2.35">{{YOUR_TEXT}}</a>
+   class myComponent {
+        title: string;
+        
+        constructor(private translateService: i18nExtended) {
+            // This needs to match the <target-language> attribute value in the .xlf file>
+            this.translateService.setLanguage('fr');
+        }
+        
+        myMethod() {
+            // Calling `translateText()` will be part of marking the text for extraction
+            // as well as fetching the translated text at runtime. If nothing is found or if
+            // the text has not yet been translated, the provided text will be returned as is.  
+            this.title = this.translateService.translateText('I like i18n-extended!');
+        }
+   }
 ```
-
-```html
-<a ng-smart-tab
-   lineColor="#eee">{{YOUR_TEXT}}</a>
-```
-___________

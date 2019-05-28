@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../index.ts"],"names":[],"mappings":"AAAA,cAAc,sBAAsB,CAAC;AAErC,oDAAoD;AACpD,wDAAwD","sourcesContent":["export * from './src/services/index';\n\n// 3) Link index file that is generated with service\n// 4) Construct README.md file and publish to the world!\n"]}

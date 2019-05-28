@@ -188,7 +188,7 @@ module.exports = {
                 const fileData = generateMessage + requireString + importLines + '\n' + translationInterface;
                 observe.next('Writing translations to disc');
                 const modulePath = module.exports.getPackageLocation();
-                fs.writeFile(`${module.exports.getPackageLocation()}/i18n-extended-translation-data.ts`, fileData);
+                fs.writeFile(`${module.exports.getPackageLocation()}/src/services/i18n-extended-translation-data.ts`, fileData);
             },
             complete: () => {
                 observe.complete();
