@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 const fileManager = require("./file-manager");
 const execa = require('execa');
 const Listr = require('listr');
@@ -44,17 +43,17 @@ fileManager.getFiles()
                 return new rxjs.Observable(observe => {
                     observe.next('Finding source file...');
                     fileManager.geti18nExtractionFiles()
-                        .subscribe({
-                            next(extractionFiles) {
-                                fileManager.i18nSourceFiles = extractionFiles;
-                            },
-                            complete() {
-                                observe.complete();
-                            },
-                            error(e) {
-                                observe.error(e)
-                            }
-                        });
+                    .subscribe({
+                        next(extractionFiles) {
+                            fileManager.i18nSourceFiles = extractionFiles;
+                        },
+                        complete() {
+                            observe.complete();
+                        },
+                        error(e) {
+                            observe.error(e)
+                        }
+                    });
                 })
             },
         },
