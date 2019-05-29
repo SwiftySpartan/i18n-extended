@@ -6,8 +6,13 @@ const { red, green, blue, bold } = require('kleur');
 const myRxjs = require('rxjs');
 const xml2js = require('xml2js');
 const path = require("path");
+const process = require('process');
+const execa = require('execa');
+const cp = require("child_process");
 
 module.exports = {
+    angularProjects: [],
+    defaultProject: 0,
     initialTranslationsCahce: [],
     parsedDataList: [],
     i18nSourceFiles: [],
@@ -24,20 +29,25 @@ module.exports = {
     },
     readFiles: (pathList) => {
         return new myRxjs.Observable(observe => {
-            for (let i = 0; i < pathList.length; i++) {
-                const path = pathList[i];
-                try {
-                    fs.readFile(path, 'utf8', (err, contents) => {
-                        observe.next({
-                            name: path,
-                            content: contents,
+            if (!pathList) {
+                observe.error(new Error('No files found'));
+            }
+            if (pathList) {
+                for (let i = 0; i < pathList.length; i++) {
+                    const path = pathList[i];
+                    try {
+                        fs.readFile(path, 'utf8', (err, contents) => {
+                            observe.next({
+                                name: path,
+                                content: contents,
+                            });
+                            if (i === pathList.length - 1) {
+                                observe.complete();
+                            }
                         });
-                        if (i === pathList.length - 1) {
-                            observe.complete();
-                        }
-                    });
-                } catch (e) {
-                    observe.error(e);
+                    } catch (e) {
+                        observe.error(e);
+                    }
                 }
             }
         });
@@ -197,6 +207,44 @@ module.exports = {
         return __dirname.replace('/src/cli','');
     },
     getAngularLocation: () => {
-        return module.exports.getPackageLocation().replace('/node_modules/@andrewwormald/i18n-extended', '');
+        return module.exports.angularProjects[module.exports.defaultProject];
+    },
+    setAngularDirectory: (path) => {
+        return new myRxjs.Observable(observe => {
+            recursive(path, ["*.html","*.scss", "index.ts","*.module.ts","*.spec.ts", "*.js", "*.ts", "*.md", "*.directive.ts"], (err, files) => {
+                // filter for angular.json file
+                if (err) {
+                    observe.error(err);
+                }
+                if (!files) {
+                    observe.complete();
+                    return;
+                }
+                let filteredFilesList = files.filter(fileName => {
+                    if (fileName.includes('angular.json') && !fileName.includes('node_modules/@schematics')) {
+                        return fileName;
+                    }
+                });
+                filteredFilesList = filteredFilesList.map(filePath => {
+                    return filePath.split('angular.json')[0]
+                });
+                module.exports.angularProjects = filteredFilesList;
+                observe.complete()
+            });
+        })
+    },
+    installService: (path) => {
+        return new myRxjs.Observable(observe => {
+            (async () => {
+                cp.exec("npm install @andrewwormald/i18n-extended@latest --save", {cwd: path}, (error,stdout,stderr) => {
+                    if (error) {
+                        observe.error();
+                    }
+                    if (stdout) {
+                        observe.complete();
+                    }
+                });
+            })();
+        });
     }
 };

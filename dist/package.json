@@ -1,6 +1,6 @@
 {
   "name": "@andrewwormald/i18n-extended",
-  "version": "1.1.10",
+  "version": "1.2.6",
   "description": "",
   "main": "dist/bundles/i18n-extended.umd.js",
   "scripts": {
@@ -14,7 +14,6 @@
     "url": "git+https://github.com/SwiftySpartan/i18n-extended.git"
   },
   "bin": {
-    "@andrewwormald/i18n-extended": "bin/i18n-extended",
     "i18n-extended": "bin/i18n-extended"
   },
   "publishConfig": {

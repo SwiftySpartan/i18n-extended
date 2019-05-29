@@ -4,17 +4,26 @@ ___________
 ##### created by  Andrew Wormald
 ###### SwiftySpartan / @andrewwormald
 #
+####Notes
+##### You must install this gloablly to easily execute
+##### the command from anywhere without having to use
+##### `./node_modules/.bin/i18n-extended` executable
+#
 ### Installation:
 ##### Step 1:
 ###### Navigate to your angular directory that has all your angular projects.
 ```bash
-    npm install i18n-extended@latest --save
+    npm install -g @andrewwormald/i18n-extended@latest --save
 ```
 
 ##### Step 2:
 ###### You need to run the command in your angular project directory
 ```bash
-    i18n-extended
+    i18n-extended 
+```
+##### If the above doesnt work try the following in your Angular app directory
+```bash
+    ./node_modules/.bin/i18n-extended 
 ```
 
 ##### Step 3:
