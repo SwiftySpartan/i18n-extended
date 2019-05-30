@@ -1,7 +1,7 @@
 const recursive = require("recursive-readdir");
 const fs = require('fs-extra');
 const prompts = require('prompts');
-const { red, green, blue, bold } = require('kleur');
+const {red, green, blue, bold} = require('kleur');
 const myRxjs = require('rxjs');
 const xml2js = require('xml2js');
 const path = require("path");
@@ -17,7 +17,7 @@ module.exports = {
     getFiles: () => {
         return new Promise((resolve, reject) => {
             if (module.exports.getAngularLocation()) {
-                recursive(module.exports.getAngularLocation(), ["*.html","*.scss", "index.ts","*.module.ts","*.spec.ts", "*.js", "*.go", "*.json", "*.md", "*.directive.ts"], function (err, files) {
+                recursive(module.exports.getAngularLocation(), ["*.html", "*.scss", "index.ts", "*.module.ts", "*.spec.ts", "*.js", "*.go", "*.json", "*.md", "*.directive.ts"], function (err, files) {
                     resolve(files);
                 });
             } else {
@@ -90,7 +90,7 @@ module.exports = {
     geti18nExtractionFiles: () => {
         return new myRxjs.Observable(observe => {
             recursive(module.exports.getAngularLocation(),
-                ["*.html","*.scss","*.ts","*.js", "*.go", "*.cpp", "*.json", "*.md"],
+                ["*.html", "*.scss", "*.ts", "*.js", "*.go", "*.cpp", "*.json", "*.md"],
                 (err, files) => {
                     const filteredFiles = files.filter(item => item.includes('xlf'));
                     observe.next(filteredFiles);
@@ -105,44 +105,53 @@ module.exports = {
         if (extractionList.length < 1) {
             observe.error(new Error('Cannot find any strings!'));
         }
-        module.exports.readFiles(extractionList).subscribe(value => {
-            xml2js.parseString(value.content, (err, result) => {
-                // filter for the source file/ / source language
-                const filteredList = [];
-                result.xliff.file.forEach(item => {
-                    if (item.$['source-language'] === item.$['target-language'] || item.$['target-language'] === undefined) {
-                        filteredList.push(item);
-                    }
-                });
-                if (filteredList.length > 0) {
-                    // build new entries
-                    for (let item of parsedDataList) {
-                        if (!item) {
-                            continue;
+        // remove nulls
+        parsedDataList = parsedDataList.filter(v => v);
+        let cacheMap = new Set();
+        parsedDataList.forEach(v => {
+            cacheMap.add(v);
+        });
+        for (let i = 0; i < extractionList.length; i++) {
+            fs.readFile(extractionList[i], 'utf8', (err, value) => {
+                xml2js.parseString(value, (err, result) => {
+                    // filter for the source file/ / source language
+                    const filteredList = [];
+                    result.xliff.file.forEach(item => {
+                        if (item.$['source-language'] === item.$['target-language'] || item.$['target-language'] === undefined) {
+                            filteredList.push(item);
                         }
-                        if (item.text && value.content.includes(`<source>${item.text}</source>`)) {
-                            continue;
-                        }
-                        observe.next(`Adding new phrase: '${item.text}' to translation files`);
-                        const temp = module.exports.generateXLFTemplate(item.text, item.description ? item.description : null);
-                        if (temp) {
-                            filteredList[0].body[0]['trans-unit'].push(temp)
-                        }
+                    });
+                    if (filteredList.length > 0) {
+                        // build new entries
+                        for (let item of Array.from(cacheMap)) {
+                            if (!item) {
+                                continue;
+                            }
+                            if (item.text && value.includes(`<source>${item.text}</source>`)) {
+                                continue;
+                            }
+                            observe.next(`Adding new phrase: '${item.text}' to translation files`);
+                            const temp = module.exports.generateXLFTemplate(item.text, item.description ? item.description : null);
+                            if (temp) {
+                                filteredList[0].body[0]['trans-unit'].push(temp)
+                            }
+                        };
                         result.xliff.file = filteredList;
                         // generate new xml builder
                         const builder = new xml2js.Builder();
                         // generate xml string for file generation
                         const xml = builder.buildObject(result);
                         // write new file with new content
-                        fs.writeFile(value.name, xml);
-                        observe.next(`Finished writing to ${value.name}`);
+                        fs.writeFile(extractionList[i], xml);
+                        observe.next(`Finished writing to ${extractionList[i]}`);
                     }
-                }
-                observe.complete();
+                    observe.complete();
+                });
             });
-        })
+        }
+        observe.complete()
     },
-    generateXLFTemplate: (text , note) => {
+    generateXLFTemplate: (text, note) => {
         let notesTemplateList = [];
         const noteTemplate = module.exports.generateXLFNote(note);
         if (noteTemplate) {
@@ -169,14 +178,14 @@ module.exports = {
         if (!message) {
             return null;
         }
-        return { _: `${message}`, '$': { priority: '1', from: `description` }}
+        return {_: `${message}`, '$': {priority: '1', from: `description`}}
     },
     generateIndexFile: (observe) => {
         module.exports.geti18nExtractionFiles().subscribe({
             next: (pathList) => {
                 const generateMessage = '// This file has been automatically generated by the i18n-extended cli \n// Do not modify or remove anything from this file \n \n';
                 const requireString = 'declare const require: any;'
-                let translationInterface = 'export class i18nDataMap {\n  getTranslationStrings() {\n      return [\n      ';
+                let translationInterface = 'export function i18nDataMap() {\n  return [\n      ';
                 observe.next('Indexing translation file paths');
                 for (let path of pathList) {
                     const line = module.exports.generateImportString(path);
@@ -184,7 +193,7 @@ module.exports = {
                 }
                 translationInterface = translationInterface.substr(0, translationInterface.length - 2);
                 if (translationInterface) {
-                    translationInterface += '];\n  }\n}';
+                    translationInterface += '];\n}';
                 }
                 const fileData = generateMessage + requireString + '\n' + translationInterface;
 
@@ -202,14 +211,14 @@ module.exports = {
         return `require('raw-loader!${path}')`
     },
     getPackageLocation: () => {
-        return __dirname.replace('/src/cli','');
+        return __dirname.replace('/src/cli', '');
     },
     getAngularLocation: () => {
         return module.exports.angularProjects[module.exports.defaultProject];
     },
     setAngularDirectory: (path) => {
         return new myRxjs.Observable(observe => {
-            recursive(path, ["*.html","*.scss", "index.ts","*.module.ts","*.spec.ts", "*.js", "*.ts", "*.md", "*.directive.ts"], (err, files) => {
+            recursive(path, ["*.html", "*.scss", "index.ts", "*.module.ts", "*.spec.ts", "*.js", "*.ts", "*.md", "*.directive.ts"], (err, files) => {
                 // filter for angular.json file
                 if (err) {
                     observe.error(err);
@@ -234,7 +243,7 @@ module.exports = {
     installService: (path) => {
         return new myRxjs.Observable(observe => {
             (async () => {
-                cp.exec("npm install @andrewwormald/i18n-extended@latest --save", {cwd: path}, (error,stdout,stderr) => {
+                cp.exec("npm install @andrewwormald/i18n-extended@latest --save", {cwd: path}, (error, stdout, stderr) => {
                     if (error) {
                         observe.error();
                     }
@@ -244,5 +253,12 @@ module.exports = {
                 });
             })();
         });
+    },
+    generateTranslationEntry: (message, note) => {
+        if (note) {
+            return `<trans-unit datatype="html">\n      <source>${message}</source>\n       <note priority="1" from="description">${note}</note>\n  </trans-unit>`
+        }
+
+        return `<trans-unit datatype="html">\n      <source>${message}</source>\n  </trans-unit>`
     }
 };
