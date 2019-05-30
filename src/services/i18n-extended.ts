@@ -1,18 +1,24 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, Optional, InjectionToken } from '@angular/core';
 
 declare const require: any;
-const files = require("./i18n-extended-translation-data");
+
+export const I18N_EXTENDED_DATA = new InjectionToken<string>('I18N_EXTENDED_DATA');
 
 @Injectable({
   providedIn: 'root'
 })
 export class i18nExtended {
   private language: string = 'en';
+  private files: [string];
 
-  constructor() {}
+  constructor(@Inject(I18N_EXTENDED_DATA) @Optional() public i18nData?: any) {
+    if (!this.files) {
+      this.files = this.i18nData();
+    }
+  }
 
   private getTranslationFile() {
-    return files.getTranslationStrings().filter((item:string) => item.includes(`target-language="${this.language}"`))[0];
+    return this.files.filter((item:string) => item.includes(`target-language="${this.language}"`))[0];
   }
 
   public setLanguage(langCode: string) {
@@ -32,9 +38,25 @@ export class i18nExtended {
         return translatedString;
       }
       const list = result.xliff.file[0].body[0]['trans-unit'] as Array<any>;
-      const translation = list.filter(item => {
+      let translation = [];
+      translation = list.filter(item => {
         return item.source[0] === text;
       });
+
+      if (translation.length === 0) {
+        translation = list.filter(item => {
+          return item.source[0].toLowerCase() === text.toLowerCase();
+        });
+      }
+
+      if (translation.length === 0) {
+        for (let item of list) {
+          if (text.includes(item.source[0])) {
+            translatedString = item.target[0] +  text.split(item.source[0])[1];
+          }
+        }
+      }
+
       if (translation && translation.length > 0) {
         translatedString = translation[0].target[0];
       }

@@ -2,19 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="368b2f60-dc20-4286-b86c-9ead097740b5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/dist/src/services/i18nDataMap.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/i18nDataMap.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/i18n-extended" beforeDir="false" afterPath="$PROJECT_DIR$/bin/i18n-extended" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/dist/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/dist/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/dist/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/bin/i18n-extended" beforeDir="false" afterPath="$PROJECT_DIR$/dist/bin/i18n-extended" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/bundles/i18n-extended.umd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/bundles/i18n-extended.umd.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.ngsummary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/package.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/src/cli/file-manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/src/cli/file-manager.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/src/cli/i18n-extended-cli.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/src/cli/i18n-extended-cli.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended-translation-data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended.metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended.ngsummary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/src/services/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/src/services/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/src/services/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/src/services/index.metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/src/services/index.ngsummary.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cli/file-manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/file-manager.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cli/i18n-extended-cli.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/i18n-extended-cli.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/i18n-extended-translation-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/i18n-extended-translation-data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/i18n-extended-translation-data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/i18n-extended.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/i18n-extended.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,85 +89,54 @@
     <session id="-1628849758">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="14" />
-          <entry key="project.open.time.1" value="9" />
+          <entry key="project.closed" value="17" />
+          <entry key="project.open.time.1" value="10" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="15" />
+          <entry key="project.opened" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="4" />
-          <entry key="JSON" value="60" />
-          <entry key="JavaScript" value="138" />
-          <entry key="Markdown" value="15" />
-          <entry key="PLAIN_TEXT" value="64" />
+          <entry key="JSON" value="67" />
+          <entry key="JavaScript" value="162" />
+          <entry key="Markdown" value="20" />
+          <entry key="PLAIN_TEXT" value="65" />
           <entry key="SCSS" value="2" />
           <entry key="SourceMap" value="2" />
-          <entry key="TypeScript" value="89" />
+          <entry key="TypeScript" value="100" />
           <entry key="XML" value="1" />
           <entry key="tsconfig" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="TypeScriptServerServiceImpl" value="8" />
+          <entry key="TypeScriptServerServiceImpl" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Bash" value="4" />
           <entry key="HTML" value="14" />
-          <entry key="JSON" value="354" />
-          <entry key="JavaScript" value="13644" />
-          <entry key="Markdown" value="1522" />
+          <entry key="JSON" value="362" />
+          <entry key="JavaScript" value="14136" />
+          <entry key="Markdown" value="1768" />
           <entry key="PLAIN_TEXT" value="30" />
-          <entry key="TypeScript" value="1577" />
+          <entry key="TypeScript" value="2156" />
+          <entry key="TypeScript JSX" value="9" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="218">
-                <caret line="15" column="47" selection-end-line="72" selection-end-column="3" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="765">
-                <caret line="72" column="3" selection-start-line="72" selection-start-column="3" selection-end-line="72" selection-end-column="3" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="52">
@@ -159,19 +149,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>oh m</find>
-      <find>Cannot</find>
-      <find>context</find>
-      <find>geti18nExtractionFiles</find>
-      <find>error</find>
-      <find>@</find>
-      <find>recursive-readdir</find>
-      <find>this is do</find>
-      <find>getTsTranslationsFromFile</find>
-      <find>console.log(</find>
-      <find>setTimeout</find>
-      <find>console</find>
-      <find>replace</find>
       <find>generateImportString</find>
       <find>Cannot find any i18n .xlf translation files!</find>
       <find>sec</find>
@@ -186,9 +163,22 @@
       <find>setAngularDirectory</find>
       <find>module.exports.setAngularDirectory</find>
       <find>.bin/i18n-extended</find>
-      <find>project</find>
       <find>(async () =&gt; {</find>
       <find>/i18n-extended</find>
+      <find>de</find>
+      <find>getTsTranslationsFromFile</find>
+      <find>write</find>
+      <find>agv</find>
+      <find>project</find>
+      <find>Find</find>
+      <find>appe</find>
+      <find>argv</find>
+      <find>console.log</find>
+      <find>cp</find>
+      <find>execa</find>
+      <find>insta</find>
+      <find>angualr</find>
+      <find>angular</find>
     </findStrings>
     <replaceStrings>
       <replace>i18n-extended</replace>
@@ -224,7 +214,6 @@
         <option value="$PROJECT_DIR$/src/cli/test.ts" />
         <option value="$PROJECT_DIR$/src/services/smart-translate.ts" />
         <option value="$PROJECT_DIR$/src/services/smart-translate.module.ts" />
-        <option value="$PROJECT_DIR$/src/services/index.ts" />
         <option value="$PROJECT_DIR$/src/locale/wallet.xlf" />
         <option value="$PROJECT_DIR$/index.ts" />
         <option value="$PROJECT_DIR$/dist/cli/i18n-extended-cli.js" />
@@ -237,21 +226,23 @@
         <option value="$PROJECT_DIR$/i18n-extended-translation-data.ts" />
         <option value="$PROJECT_DIR$/locale/test.component.ts" />
         <option value="$PROJECT_DIR$/src/services/i18n-extended-translation-data.ts" />
-        <option value="$PROJECT_DIR$/src/services/i18n-extended.ts" />
         <option value="$PROJECT_DIR$/rollup.config.ts" />
         <option value="$PROJECT_DIR$/src/services/i18n-extended-translation-data.js" />
         <option value="$PROJECT_DIR$/dist/src/services/i18n-extended-translation-data.js" />
         <option value="$PROJECT_DIR$/src/cli/cli.js" />
         <option value="$PROJECT_DIR$/bin/i18n-extended" />
         <option value="$PROJECT_DIR$/dist/bin/i18n-extended" />
-        <option value="$PROJECT_DIR$/src/cli/file-manager.js" />
-        <option value="$PROJECT_DIR$/src/cli/i18n-extended-cli.js" />
-        <option value="$PROJECT_DIR$/dist/src/cli/file-manager.js" />
         <option value="$PROJECT_DIR$/dist/src/cli/i18n-extended-cli.js" />
-        <option value="$PROJECT_DIR$/dist/package.json" />
-        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/dist/src/cli/file-manager.js" />
         <option value="$PROJECT_DIR$/dist/README.md" />
+        <option value="$PROJECT_DIR$/dist/package.json" />
+        <option value="$PROJECT_DIR$/src/cli/file-manager.js" />
+        <option value="$PROJECT_DIR$/src/services/i18n-extended.ts" />
+        <option value="$PROJECT_DIR$/src/services/index.ts" />
+        <option value="$PROJECT_DIR$/src/services/i18nDataMap.ts" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/cli/i18n-extended-cli.js" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -262,19 +253,17 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/dist/node_modules" />
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
-      <path value="$PROJECT_DIR$/dist/package.json" />
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
-    <option name="width" value="2560" />
-    <option name="height" value="1417" />
+    <option name="width" value="1440" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -282,6 +271,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -294,12 +284,22 @@
               <item name="i18n-extended" type="462c0819:PsiDirectoryNode" />
               <item name="dist" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="i18n-extended" type="b2602c69:ProjectViewProjectNode" />
+              <item name="i18n-extended" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="i18n-extended" type="b2602c69:ProjectViewProjectNode" />
+              <item name="i18n-extended" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cli" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -323,11 +323,11 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/dist/src/cli" />
-      <recent name="$PROJECT_DIR$/dist" />
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/dist/src" />
-      <recent name="$PROJECT_DIR$/node_modules/@andrewwormald" />
+      <recent name="$PROJECT_DIR$/dist" />
+      <recent name="$PROJECT_DIR$/dist/src/services" />
+      <recent name="$PROJECT_DIR$/dist/src/cli" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -397,18 +397,21 @@
       <workItem from="1559046773833" duration="22000" />
       <workItem from="1559050257103" duration="4595000" />
       <workItem from="1559101583806" duration="13839000" />
-      <workItem from="1559129843115" duration="33000" />
+      <workItem from="1559129843115" duration="79000" />
+      <workItem from="1559131957192" duration="7016000" />
+      <workItem from="1559207132684" duration="383000" />
+      <workItem from="1559207636847" duration="6140000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96254000" />
+    <option name="totallyTimeSpent" value="109839000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="2560" height="1440" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2192216" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17453505" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Learn" order="3" />
@@ -422,9 +425,9 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4988086" visible="true" weight="0.3463811" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50119144" side_tool="true" weight="0.2732644" />
-      <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50119144" side_tool="true" weight="0.2732644" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4988086" visible="true" weight="0.33292383" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -470,13 +473,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/locale/wallet.xlf" />
-    <entry file="file://$PROJECT_DIR$/src/cli/test.ts" />
-    <entry file="file://$PROJECT_DIR$/node_modules/@angular/common/src/common.d.ts" />
-    <entry file="file://$PROJECT_DIR$/node_modules/@angular/common/public_api.d.ts" />
-    <entry file="file://$PROJECT_DIR$/node_modules/@angular/common/index.d.ts" />
-    <entry file="file://$PROJECT_DIR$/node_modules/@andrewwormald/i18m-extended/i18n-extended.ts" />
-    <entry file="file://$PROJECT_DIR$/node_modules/@andrewwormald/i18m-extended/index.ts" />
     <entry file="file://$PROJECT_DIR$/node_modules/@andrewwormald/i18m-extended/cli/file-manager.js" />
     <entry file="file://$PROJECT_DIR$/dist/services/i18n-extended.ts" />
     <entry file="file://$PROJECT_DIR$/node_modules/@andrewwormald/i18n-extended/bundles/i18n-extended.umd.js" />
@@ -498,26 +494,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/services/i18n-extended-translation-data.ts" />
-    <entry file="file://$PROJECT_DIR$/src/services/i18n-extended.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/dist.component.js" />
     <entry file="file://$PROJECT_DIR$/dist/dist.html" />
     <entry file="file://$PROJECT_DIR$/dist/dist.scss" />
-    <entry file="file://$PROJECT_DIR$/src/services/i18n-extended-translation-data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/index.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -532,31 +514,11 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/en/wallet.xlf" />
-    <entry file="file://$PROJECT_DIR$/dist/src/services/i18n-extended.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="4" column="29" lean-forward="true" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/src/services/index.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/services/i18n-extended-translation-data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/src/services/i18n-extended-translation-data.js" />
     <entry file="file://$PROJECT_DIR$/dist/src/cli/i18n-extended-cli" />
-    <entry file="file://$PROJECT_DIR$/dist/bin/i18n-extended">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="40" lean-forward="true" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/recursive-readdir/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-586">
@@ -564,13 +526,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/yargs/yargs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="527" column="8" selection-start-line="527" selection-start-column="8" selection-end-line="527" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/yargs/yargs.js" />
     <entry file="file://$PROJECT_DIR$/bin/i18n-extended">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
@@ -578,13 +534,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/execa/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/execa/index.js" />
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
@@ -599,53 +549,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cli/file-manager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="8" column="35" lean-forward="true" selection-end-line="250" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/cli/i18n-extended-cli.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cli/i18n-extended-cli.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="35" lean-forward="true" selection-end-line="179" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/cli/file-manager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@typescript-eslint/typescript-estree/dist/ts-estree/ast-node-types.d.ts" />
+    <entry file="file://$PROJECT_DIR$/node_modules/@typescript-eslint/typescript-estree/dist/parser.d.ts" />
+    <entry file="file://$PROJECT_DIR$/node_modules/@typescript-eslint/typescript-estree/dist/parser-options.d.ts" />
     <entry file="file://$PROJECT_DIR$/dist/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/dist/src/services/index.metadata.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/src/cli/i18n-extended-cli.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="62" column="48" selection-start-line="62" selection-start-column="48" selection-end-line="62" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/i18n-extended-translation-data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="21" column="2" lean-forward="true" selection-start-line="3" selection-end-line="21" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/src/services/i18n-extended.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cli/file-manager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="186" column="57" lean-forward="true" selection-start-line="186" selection-start-column="57" selection-end-line="186" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="31" selection-start-column="31" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/bin/i18n-extended">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <caret line="2" column="44" lean-forward="true" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="218">
-            <caret line="15" column="47" selection-end-line="72" selection-end-column="3" />
+          <first_editor relative-caret-position="174">
+            <caret line="37" column="35" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
           </first_editor>
           <second_editor />
         </state>
@@ -654,10 +617,58 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="765">
-            <caret line="72" column="3" selection-start-line="72" selection-start-column="3" selection-end-line="72" selection-end-column="3" />
+          <first_editor relative-caret-position="146">
+            <caret line="54" column="22" lean-forward="true" selection-end-line="70" />
+            <folding>
+              <element signature="e#4#84#0" expanded="true" />
+            </folding>
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/src/services/i18nDataMap.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/i18nDataMap.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/i18n-extended.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/src/cli/file-manager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="231" column="6" lean-forward="true" selection-start-line="231" selection-start-column="6" selection-end-line="231" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cli/i18n-extended-cli.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3">
+          <caret line="102" column="14" lean-forward="true" selection-start-line="102" selection-start-column="14" selection-end-line="102" selection-end-column="14" />
+          <folding>
+            <element signature="e#704#1372#0" />
+            <element signature="e#3039#3966#0" />
+            <element signature="e#4076#4405#0" />
+            <element signature="e#4516#5212#0" />
+            <element signature="e#5345#5576#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
         </state>
       </provider>
     </entry>
