@@ -197,8 +197,9 @@ module.exports = {
             },
         })
     },
-    generateImportString: (pathFromNodeModules) => {
-        return `require('raw-loader!${pathFromNodeModules}')`
+    generateImportString: (path) => {
+        path = path.split(module.exports.getAngularLocation())[1];
+        return `require('raw-loader!${path}')`
     },
     getPackageLocation: () => {
         return __dirname.replace('/src/cli','');
