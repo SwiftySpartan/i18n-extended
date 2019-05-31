@@ -14,6 +14,10 @@ export class i18nExtended {
   constructor(@Inject(I18N_EXTENDED_DATA) @Optional() public i18nData?: any) {
     if (!this.files) {
       this.files = this.i18nData();
+    } else {
+      // Incase we cannot get the data or fidn the files just return default
+      // text
+      this.files = [''];
     }
   }
 

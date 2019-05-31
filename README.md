@@ -43,7 +43,7 @@ ___________
     providers: [
         {
           provide: I18N_EXTENDED_DATA,
-          useFactory: () => i18nDataMap(),
+          useValue: () => i18nDataMap(),
         },
     ]
 ```

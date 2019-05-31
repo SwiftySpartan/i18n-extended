@@ -12,6 +12,11 @@ var i18nExtended = /** @class */ (function () {
         if (!this.files) {
             this.files = this.i18nData();
         }
+        else {
+            // Incase we cannot get the data or fidn the files just return default
+            // text
+            this.files = [''];
+        }
     }
     i18nExtended.prototype.getTranslationFile = function () {
         var _this = this;
