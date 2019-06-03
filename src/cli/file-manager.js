@@ -112,73 +112,37 @@ module.exports = {
             cacheMap.add(v);
         });
         for (let i = 0; i < extractionList.length; i++) {
-            fs.readFile(extractionList[i], 'utf8', (err, value) => {
-                xml2js.parseString(value, (err, result) => {
-                    // filter for the source file/ / source language
-                    const filteredList = [];
-                    result.xliff.file.forEach(item => {
-                        if (item.$['source-language'] === item.$['target-language'] || item.$['target-language'] === undefined) {
-                            filteredList.push(item);
-                        }
-                    });
-                    if (filteredList.length > 0) {
-                        // build new entries
-                        for (let item of Array.from(cacheMap)) {
-                            if (!item) {
-                                continue;
-                            }
-                            if (item.text && value.includes(`<source>${item.text}</source>`)) {
-                                continue;
-                            }
-                            observe.next(`Adding new phrase: '${item.text}' to translation files`);
-                            const temp = module.exports.generateXLFTemplate(item.text, item.description ? item.description : null);
-                            if (temp) {
-                                filteredList[0].body[0]['trans-unit'].push(temp)
-                            }
-                        };
-                        result.xliff.file = filteredList;
-                        // generate new xml builder
-                        const builder = new xml2js.Builder();
-                        // generate xml string for file generation
-                        const xml = builder.buildObject(result);
-                        // write new file with new content
-                        fs.writeFile(extractionList[i], xml);
-                        observe.next(`Finished writing to ${extractionList[i]}`);
+            fs.readFile(extractionList[i], 'utf8', (err, fileContent) => {
+                if (fileContent.includes('target-language=')) {
+                    return;
+                }
+                const index = fileContent.indexOf('</body>')
+                const nexText = module.exports.generateTranslationEntry()
+                const _bodySplit = fileContent.split('</body>')[1]
+                if (_bodySplit) {
+                    observe.error('Invalid xlf file')
+                }
+                const bodyGap = _bodySplit.split('</file>')[0].replace('\n', '');
+                const calculatedWhiteSpaceGap = bodyGap + bodyGap;
+                let injectionString = '';
+                let count = 0;
+                for (let item of Array.from(cacheMap)) {
+                    if (fileContent.includes(`<source>${item.text}</source>`)) {
+                        continue;
                     }
-                    observe.complete();
-                });
+                    const random_id_indicator = Math.floor(Math.random() * (+999999999 - +1)) + +1;
+                    const id = `${Date.now()}${random_id_indicator}i18nExtendedExtractor`;
+                    const template = module.exports.generateTranslationEntry(id, item.text, item.description ? item.description : null, calculatedWhiteSpaceGap, count === 0);
+                    injectionString += template;
+                    count++;
+                }
+                const newTranslations = injectionString;
+                var output = [fileContent.slice(0, index).trimRight(), newTranslations.trimRight(), fileContent.slice(index)].join('\n' + calculatedWhiteSpaceGap);
+                fs.writeFile(extractionList[i], output);
+                observe.next(`Finished writing to ${extractionList[i]}`);
             });
         }
-        observe.complete()
-    },
-    generateXLFTemplate: (text, note) => {
-        let notesTemplateList = [];
-        const noteTemplate = module.exports.generateXLFNote(note);
-        if (noteTemplate) {
-            notesTemplateList.push(noteTemplate);
-        }
-        if (notesTemplateList.length > 0) {
-            return {
-                $: {
-                    datatype: 'html',
-                },
-                source: [`${text}`],
-                note: notesTemplateList,
-            }
-        } else {
-            return {
-                $: {
-                    datatype: 'html',
-                },
-                source: [`${text}`],
-            }
-        }
-    },
-    generateXLFNote: (message) => {
-        if (!message) {
-            return null;
-        }
-        return {_: `${message}`, '$': {priority: '1', from: `description`}}
+        observe.complete();
     },
     generateIndexFile: (observe) => {
         module.exports.geti18nExtractionFiles().subscribe({
@@ -254,11 +218,19 @@ module.exports = {
             })();
         });
     },
-    generateTranslationEntry: (message, note) => {
+    generateTranslationEntry: (id, message, note, whiteSpace, removeInitialWhiteSpace) => {
+        if (removeInitialWhiteSpace) {
+            if (note) {
+                return `<trans-unit id="${id}" datatype="html">\n${whiteSpace}${whiteSpace}<source>${message}</source>\n${whiteSpace}${whiteSpace}<note priority="1" from="description">${note}</note>\n${whiteSpace}</trans-unit>\n`
+            }
+        
+            return `<trans-unit id="${id}" datatype="html">\n${whiteSpace}${whiteSpace}<source>${message}</source>\n${whiteSpace}</trans-unit>\n`
+        };
+
         if (note) {
-            return `<trans-unit datatype="html">\n      <source>${message}</source>\n       <note priority="1" from="description">${note}</note>\n  </trans-unit>`
+        return `${whiteSpace}<trans-unit id="${id}" datatype="html">\n${whiteSpace}${whiteSpace}<source>${message}</source>\n${whiteSpace}${whiteSpace}<note priority="1" from="description">${note}</note>\n${whiteSpace}</trans-unit>\n`
         }
 
-        return `<trans-unit datatype="html">\n      <source>${message}</source>\n  </trans-unit>`
+        return `${whiteSpace}<trans-unit id="${id}" datatype="html">\n${whiteSpace}${whiteSpace}<source>${message}</source>\n${whiteSpace}</trans-unit>\n`
     }
 };

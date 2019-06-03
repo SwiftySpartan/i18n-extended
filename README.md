@@ -5,6 +5,7 @@ ___________
 ###### SwiftySpartan / @andrewwormald
 #
 ####Notes
+<p> Production ready from v1.3.5</p>
 <p> You must install this gloablly to easily execute
  the command from anywhere without having to use
  `./node_modules/.bin/i18n-extended` executable </p>
