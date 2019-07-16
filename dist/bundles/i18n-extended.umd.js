@@ -44,7 +44,14 @@ var i18nExtended = /** @class */ (function () {
             });
             if (translation.length === 0) {
                 translation = list.filter(function (item) {
-                    return item.source[0].toLowerCase() === text.toLowerCase();
+                    var target = item.source[0];
+                    if (typeof target === 'object' && target['_']) {
+                        target = target['_'];
+                    }
+                    if (typeof target === 'string') {
+                        target.toLowerCase();
+                    }
+                    return target === text.toLowerCase();
                 });
             }
             if (translation.length === 0) {
@@ -74,9 +81,59 @@ var i18nExtended = /** @class */ (function () {
     return i18nExtended;
 }());
 
-// 3) Link index file that is generated with service
-// 4) Construct README.md file and publish to the world!
+var i18nExtendedDirective = /** @class */ (function () {
+    function i18nExtendedDirective(el, i18n) {
+        this.el = el;
+        this.i18n = i18n;
+    }
+    i18nExtendedDirective.prototype.ngOnInit = function () {
+        var element = this.el.nativeElement;
+        element.innerHTML = this.i18n.translateText(element.innerHTML);
+    };
+    i18nExtendedDirective.decorators = [
+        { type: i0.Directive, args: [{ selector: '[i18nExtended]' },] },
+    ];
+    /** @nocollapse */
+    i18nExtendedDirective.ctorParameters = function () { return [
+        { type: i0.ElementRef },
+        { type: i18nExtended }
+    ]; };
+    return i18nExtendedDirective;
+}());
 
+var i18nExtendedDirectiveModule = /** @class */ (function () {
+    function i18nExtendedDirectiveModule() {
+    }
+    i18nExtendedDirectiveModule.decorators = [
+        { type: i0.NgModule, args: [{
+                    declarations: [
+                        i18nExtendedDirective,
+                    ],
+                    exports: [
+                        i18nExtendedDirective,
+                    ],
+                },] },
+    ];
+    return i18nExtendedDirectiveModule;
+}());
+
+var i18nExtendedModule = /** @class */ (function () {
+    function i18nExtendedModule() {
+    }
+    i18nExtendedModule.decorators = [
+        { type: i0.NgModule, args: [{
+                    imports: [
+                        i18nExtendedDirectiveModule
+                    ],
+                    exports: [
+                        i18nExtendedDirectiveModule,
+                    ],
+                },] },
+    ];
+    return i18nExtendedModule;
+}());
+
+exports.i18nExtendedModule = i18nExtendedModule;
 exports.I18N_EXTENDED_DATA = I18N_EXTENDED_DATA;
 exports.i18nExtended = i18nExtended;
 

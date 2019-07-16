@@ -31,7 +31,8 @@ export class i18nExtended {
 
   public translateText(text: string) {
     let translatedString = text;
-    const file = this.getTranslationFile() as string;
+    try {
+      const file = this.getTranslationFile() as string;
     if (!file) {
       return translatedString;
     }
@@ -49,7 +50,14 @@ export class i18nExtended {
 
       if (translation.length === 0) {
         translation = list.filter(item => {
-          return item.source[0].toLowerCase() === text.toLowerCase();
+          var target = item.source[0];
+          if (typeof target === 'object' && target['_']) {
+            target = target['_']
+          }
+          if (typeof target === 'string') {
+            target = target.toLowerCase();
+          }
+          return target === text.toLowerCase();
         });
       }
 
@@ -65,6 +73,82 @@ export class i18nExtended {
         translatedString = translation[0].target[0];
       }
     });
+    } catch(e) {
+      return translatedString;  
+    }
     return translatedString;
+  }
+
+  private cottonReplaceAlogithm(text: string, units: Array<any>): string {
+    let translatedText = '';
+
+    if (typeof text != 'string' || !text) {
+      return translatedText;
+    }
+
+    if (!units) {
+      return translatedText;
+    }
+
+    if (units && !units[0].source) {
+      return translatedText
+    }
+
+    if (units && !units[0].target) {
+			return translatedText
+    }
+
+
+    for (let unit of units) {
+      let s = unit.source[0];
+			let t = unit.target[0];
+
+			// Check if the unit has a source and target
+			// exit the loop if one doesn't exist
+			if (!s || !t) {
+			  continue;
+			}
+      // String
+      if (typeof s === 'string' && s === text) {
+				// Go straight to the end of the method and returns the string
+				translatedText = t;
+				break;
+      }
+
+      // Generic Object
+			if (typeof s === 'object') {
+			  // Array
+			  if (Array.isArray(s)) {
+			    // Will support this once I see it coming through for the first time
+          continue;
+			  }
+
+			  // Map
+				if (s && !Array.isArray(s) && s._ && typeof s._ === 'string') {
+          // string sits at `_`
+          // interpolation sits at `x` which is a list of objects
+          // total sting length = x.length + _.split(' ').length *UNPROVEN*
+          let ul = 0;
+          if (!s.x || s.x && !Array.isArray(s.x)) {
+						ul = s._.split(' ').length + s.x.length;
+          } else {
+            ul = s._.split(' ').length;
+          }
+
+          // Length of computed text and compiled unit
+          // should be equal if its going to be a match
+          // also the unit text should be found in the given
+          // text that needs to be translated
+          if (text.length === ul && text.includes(s._)) {
+            translatedText = text.replace(s._, t._);
+            break;
+          }
+				}
+			}
+    }
+    // return what has been found return not done before as
+    // you want to ensure a direct match gets returned over a
+    // close match and therefore needs to finish running through the list
+    return translatedText;
   }
 }

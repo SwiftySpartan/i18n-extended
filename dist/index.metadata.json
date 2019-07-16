@@ -1,1 +1,1 @@
-[{"__symbolic":"module","version":4,"metadata":{},"exports":[{"from":"./src/services/index"}]}]
+[{"__symbolic":"module","version":4,"metadata":{},"exports":[{"from":"./src/services/index"},{"from":"./src/i18n-extended.module","export":["i18nExtendedModule"]}]}]

@@ -40,7 +40,14 @@ var i18nExtended = /** @class */ (function () {
             });
             if (translation.length === 0) {
                 translation = list.filter(function (item) {
-                    return item.source[0].toLowerCase() === text.toLowerCase();
+                    var target = item.source[0];
+                    if (typeof target === 'object' && target['_']) {
+                        target = target['_'];
+                    }
+                    if (typeof target === 'string') {
+                        target.toLowerCase();
+                    }
+                    return target === text.toLowerCase();
                 });
             }
             if (translation.length === 0) {
