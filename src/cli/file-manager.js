@@ -59,32 +59,60 @@ module.exports = {
     parseExtractionList: (extractionList) => {
         return extractionList.map(item => {
             const parsedObject = {};
-            if (item) {
-                parsedObject['text'] = item.split(`,`)[0];
-                parsedObject['description'] = item.split(`,`)[1];
+            const tl = item.match(/([`"'])(?:(?=(\\?))\2.)*?\1/g);
+            if (!tl) {
+                return '';
             }
-            let text = parsedObject.text.split(`'`)[1];
-            if (!text) {
-                text = parsedObject.text.split('`')[1];
-            }
-            if (!text) {
-                text = parsedObject.text.split('"')[1];
-            }
-            parsedObject.text = text;
+            let cs = '';
 
+            if (tl.length > 1) {
+                let s = item;
+                for (let i = 0; i < tl.length; i++) {
+                    s = s.replace(tl[i], i.toString());
+                }
+                if (s.includes(',')) {
+                    // take last provided string as note to translator
+                    parsedObject.description = tl[tl.length - 1];
+                    tl.pop();
+                }
+            }
+
+            tl.forEach(s => {
+                cs += s;
+            });
+
+            switch (cs[0]) {
+                case '`':
+                    cs = cs.replace(/[`]/g, '');
+                    break;
+                case '"':
+                    cs = cs.replace(/["]/g, '');
+                    break;
+                case "'":
+                    cs = cs.replace(/[']/g, '');
+                    break;
+                default: break;
+            }
             if (parsedObject.description) {
-                let description = parsedObject.description.split(`'`)[1];
-                if (!description) {
-                    description = parsedObject.description.split('`')[1];
+                switch (parsedObject.description[0]) {
+                    case '`':
+                        parsedObject.description = parsedObject.description.replace(/[`]/g, '');
+                        break;
+                    case '"':
+                        parsedObject.description = parsedObject.description.replace(/["]/g, '');
+                        break;
+                    case "'":
+                        parsedObject.description = parsedObject.description.replace(/[']/g, '');
+                        break;
+                    default: break;
                 }
-                if (!description) {
-                    description = parsedObject.description.split('"')[1];
-                }
-                parsedObject.description = description;
             }
-            if (parsedObject && parsedObject.text) {
-                return parsedObject;
-            }
+
+            // Assign compiled string
+
+            cs = cs.replace(/\${.*?}/g, `<x id="INTERPOLATION" equiv-text="{{DO NOT DELETE}}"/>`);
+            parsedObject['text'] = cs;
+            return parsedObject;
         });
     },
     geti18nExtractionFiles: () => {

@@ -6,7 +6,7 @@
   "scripts": {
     "cleanup": "rimraf dist/bundles dist/src dist/index.d.ts dist/index.js dist/index.js.map dist/LICENCE",
     "bundling": "rollup -c",
-    "minify": "uglifyjs dist/bundles/i18n-extended.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/i18n-extended.umd.min.js",
+    "minify": "uglifyjs dist/bundles/i18n-extended.umd.js --screw-ie8 --compress --mangle --output dist/bundles/i18n-extended.umd.min.js",
     "build": "npm run cleanup && ngc && npm run bundling && npm run minify"
   },
   "repository": {

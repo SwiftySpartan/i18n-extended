@@ -25,48 +25,164 @@ var i18nExtended = /** @class */ (function () {
     i18nExtended.prototype.setLanguage = function (langCode) {
         this.language = langCode;
     };
-    i18nExtended.prototype.translateText = function (text) {
+    i18nExtended.prototype.translateText = function (text, variables, description) {
         var translatedString = text;
-        var file = this.getTranslationFile();
-        if (!file) {
-            return translatedString;
-        }
-        var parseString = require('xml2js').parseString;
-        parseString(file, function (err, result) {
-            if (err) {
-                console.error(err);
+        try {
+            var file = this.getTranslationFile();
+            if (!file) {
                 return translatedString;
             }
-            var list = result.xliff.file[0].body[0]['trans-unit'];
-            var translation = [];
-            translation = list.filter(function (item) {
-                return item.source[0] === text;
-            });
-            if (translation.length === 0) {
-                translation = list.filter(function (item) {
-                    var target = item.source[0];
-                    if (typeof target === 'object' && target['_']) {
-                        target = target['_'];
-                    }
-                    if (typeof target === 'string') {
-                        target.toLowerCase();
-                    }
-                    return target === text.toLowerCase();
-                });
+            var sources = file.match(/<source\b[^>]*>(.*?)<[/]source>/g);
+            var targets = file.match(/<target\b[^>]*>(.*?)<[/]target>/g);
+            if (!sources || !targets) {
+                return text;
             }
-            if (translation.length === 0) {
-                for (var _i = 0, list_1 = list; _i < list_1.length; _i++) {
-                    var item = list_1[_i];
-                    if (text.includes(item.source[0])) {
-                        translatedString = item.target[0] + text.split(item.source[0])[1];
-                    }
+            var translationObject = [];
+            for (var i = 0; i < sources.length; i++) {
+                if (i === 0) {
+                    translationObject = [{
+                            source: sources[i].replace(/<source\b[^>]*>/g, '').replace(/<[/]source>/g, ''),
+                            target: targets[i].replace(/<target\b[^>]*>/g, '').replace(/<[/]target>/g, ''),
+                        }];
+                }
+                else {
+                    translationObject.push({
+                        source: sources[i].replace(/<source\b[^>]*>/g, '').replace(/<[/]source>/g, ''),
+                        target: targets[i].replace(/<target\b[^>]*>/g, '').replace(/<[/]target>/g, ''),
+                    });
                 }
             }
-            if (translation && translation.length > 0) {
-                translatedString = translation[0].target[0];
-            }
-        });
+            translatedString = this.cottonReplaceAlogithm(text, translationObject, variables);
+        }
+        catch (e) {
+            return translatedString;
+        }
         return translatedString;
+    };
+    i18nExtended.prototype.cottonReplaceAlogithm = function (text, units, variables) {
+        var translatedText = text;
+        if (typeof text != 'string' || !text) {
+            return translatedText;
+        }
+        if (!units) {
+            return translatedText;
+        }
+        for (var _i = 0, units_1 = units; _i < units_1.length; _i++) {
+            var unit = units_1[_i];
+            var s = unit.source;
+            var t = unit.target;
+            // Check if the unit has a source and target
+            // exit the loop if one doesn't exist
+            if (!s || !t) {
+                continue;
+            }
+            // Simple quick find
+            if (typeof s === 'string' && s === text) {
+                // Go straight to the end of the method and returns the string
+                translatedText = t;
+                break;
+            }
+            if (variables && this.isTranslation(text, s, variables)) {
+                translatedText = this.digestTranslation(text, s, t, variables);
+                break;
+            }
+            if (this.hasInterpretation(s) && this.isTranslation(text, s)) {
+                translatedText = this.digestTranslation(text, s, t);
+                break;
+            }
+        }
+        // return what has been found return not done before as
+        // you want to ensure a direct match gets returned over a
+        // close match and therefore needs to finish running through the list
+        if (!translatedText) {
+            translatedText = text;
+        }
+        return translatedText;
+    };
+    i18nExtended.prototype.isTranslation = function (text, source, variables) {
+        var matCnt = 0;
+        var te = this.breakSentanceIntoChars(text);
+        var se = this.breakSentanceIntoChars(this.removeInterpolation(source));
+        if (!se || !te) {
+            return false;
+        }
+        if (variables) {
+            var string = source;
+            for (var i_1 = 0; i_1 < variables.length; i_1++) {
+                string = string.replace(/<x\b[^>]*>/, String(variables[i_1]));
+            }
+            if (string.trim() === text.trim()) {
+                return true;
+            }
+        }
+        // Length of computed text and compiled unit
+        // should be equal if its a literal and going
+        // to be a match also the unit text should be
+        // found in the given text that needs to be
+        // translated
+        var t = source.replace(/<x\b[^>]*>/g, '');
+        if (se.length === te.length && t && text.includes(t.trim())) {
+            return true;
+        }
+        //////////////////////////////////////////////////////////
+        //  Below code should be deprecated as its not always		//
+        // going to provide accurate results and is inefficient	//
+        //////////////////////////////////////////////////////////
+        // Use the source breakdown length over the
+        // text input length as it will always be
+        // equal to or less than.
+        for (var i = 0; i < se.length; i++) {
+            if (te.includes(se[i])) {
+                matCnt++;
+            }
+        }
+        var _variableCount = this.removeInterpolation(source).match(/i18nExtendedVariable/g);
+        if (matCnt > 0 && _variableCount) {
+            var variableCount = _variableCount.length;
+            if (matCnt + variableCount === te.length) {
+                return true;
+            }
+        }
+        return false;
+    };
+    i18nExtended.prototype.breakSentanceIntoChars = function (text) {
+        return text.match(/\w+|[^\s\w]+/g);
+    };
+    i18nExtended.prototype.removeInterpolation = function (text) {
+        return text.replace(/<x\b[^>]*>/g, 'i18nExtendedVariable');
+    };
+    i18nExtended.prototype.hasInterpretation = function (text) {
+        var matches = text.match(/<x\b[^>]*>/g);
+        if (!matches) {
+            return false;
+        }
+        return matches.length > 0;
+    };
+    i18nExtended.prototype.digestTranslation = function (ct, source, target, variables) {
+        var t = this.removeInterpolation(target);
+        var cText = this.breakSentanceIntoChars(ct);
+        var cSrc = this.breakSentanceIntoChars(this.removeInterpolation(source));
+        var cTar = this.breakSentanceIntoChars(t);
+        if (!cSrc || !cTar || !cText) {
+            return ct;
+        }
+        if (variables) {
+            for (var i = 0; i < variables.length; i++) {
+                t = t.replace('i18nExtendedVariable', String(variables[i]));
+            }
+            return t;
+        }
+        var tm = [];
+        for (var i = 0; i < cText.length; i++) {
+            var wi = cText.indexOf(cSrc[i]);
+            if (wi === -1) {
+                tm.push(cText[i]);
+            }
+        }
+        for (var i = 0; i < tm.length; i++) {
+            t = t.replace('i18nExtendedVariable', tm[i]);
+        }
+        return t;
     };
     i18nExtended.decorators = [
         { type: i0.Injectable, args: [{
@@ -87,8 +203,23 @@ var i18nExtendedDirective = /** @class */ (function () {
         this.i18n = i18n;
     }
     i18nExtendedDirective.prototype.ngOnInit = function () {
-        var element = this.el.nativeElement;
-        element.innerHTML = this.i18n.translateText(element.innerHTML);
+        this.translate();
+    };
+    i18nExtendedDirective.prototype.ngOnChanges = function () {
+        this.translate();
+    };
+    i18nExtendedDirective.prototype.translate = function () {
+        var _this = this;
+        setTimeout(function () {
+            if (_this.el.nativeElement.childNodes && _this.el.nativeElement.childNodes[0] && _this.el.nativeElement.childNodes[0].nodeValue) {
+                if (_this.i18nExtended) {
+                    _this.el.nativeElement.innerText = _this.i18n.translateText(_this.el.nativeElement.childNodes[0].nodeValue, _this.i18nExtended);
+                }
+                else {
+                    _this.el.nativeElement.innerText = _this.i18n.translateText(_this.el.nativeElement.childNodes[0].nodeValue);
+                }
+            }
+        });
     };
     i18nExtendedDirective.decorators = [
         { type: i0.Directive, args: [{ selector: '[i18nExtended]' },] },
@@ -98,6 +229,9 @@ var i18nExtendedDirective = /** @class */ (function () {
         { type: i0.ElementRef },
         { type: i18nExtended }
     ]; };
+    i18nExtendedDirective.propDecorators = {
+        i18nExtended: [{ type: i0.Input }]
+    };
     return i18nExtendedDirective;
 }());
 
