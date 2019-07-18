@@ -1,11 +1,7 @@
 const recursive = require("recursive-readdir");
 const fs = require('fs-extra');
-const prompts = require('prompts');
-const {red, green, blue, bold} = require('kleur');
+const {bold} = require('kleur');
 const myRxjs = require('rxjs');
-const xml2js = require('xml2js');
-const path = require("path");
-const process = require('process');
 const cp = require("child_process");
 
 module.exports = {
@@ -109,7 +105,7 @@ module.exports = {
             }
 
             // Assign compiled string
-
+            cs = cs.replace(/&(?!#?[a-z0-9]+;)/g, '&amp;');
             cs = cs.replace(/\${.*?}/g, `<x id="INTERPOLATION" equiv-text="{{DO NOT DELETE}}"/>`);
             parsedObject['text'] = cs;
             return parsedObject;

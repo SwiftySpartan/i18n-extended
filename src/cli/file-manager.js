@@ -105,7 +105,7 @@ module.exports = {
             }
 
             // Assign compiled string
-
+            cs = cs.replace(/&(?!#?[a-z0-9]+;)/g, '&amp;');
             cs = cs.replace(/\${.*?}/g, `<x id="INTERPOLATION" equiv-text="{{DO NOT DELETE}}"/>`);
             parsedObject['text'] = cs;
             return parsedObject;
