@@ -106,7 +106,17 @@ module.exports = {
 
             // Assign compiled string
             cs = cs.replace(/&(?!#?[a-z0-9]+;)/g, '&amp;');
-            cs = cs.replace(/\${.*?}/g, `<x id="INTERPOLATION" equiv-text="{{DO NOT DELETE}}"/>`);
+            const regex = /((?:[\0-\x08\x0B\f\x0E-\x1F\uFFFD\uFFFE\uFFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]))/g;
+            cs = cs.replace(regex, "");
+
+            let equivilentText = 'DO NOT DELETE';
+            const matches = cs.match(/\${.*?}/g);
+            if (matches) {
+                for (let i = 0; i < matches.length; i++) {
+                    equivilentText = matches[i].replace('${', '').replace('}', '')
+                }
+            }
+            cs = cs.replace(/\${.*?}/g, `<x id="INTERPOLATION" equiv-text="${equivilentText}"/>`);
             parsedObject['text'] = cs;
             return parsedObject;
         });

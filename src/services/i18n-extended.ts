@@ -170,6 +170,10 @@ export class i18nExtended {
 		return text.replace(/<x\b[^>]*>/g, 'i18nExtendedVariable');
 	}
 
+	private fetchInterpolationNames(text: string): RegExpMatchArray | null {
+		return text.match(/<x\b[^>]*>/g);
+	}
+
 	private hasInterpretation(text: string): boolean {
 		let matches = text.match(/<x\b[^>]*>/g);
 		if (!matches) {
@@ -189,10 +193,21 @@ export class i18nExtended {
 		}
 
 		if (variables) {
-			for (let i = 0; i < variables.length; i++) {
-				t = t.replace('i18nExtendedVariable', String(variables[i]));
+			const sList = this.fetchInterpolationNames(source);
+			const tList = this.fetchInterpolationNames(target);
+			let orderedVariables: string[] = [];
+
+			if (tList && sList) {
+				// reorder list
+				for (let i = 0; i < variables.length; i++) {
+					orderedVariables.splice(tList.indexOf(sList[i]), 0, String(variables[i]));
+				}
 			}
-			return t
+
+			for (let i = 0; i < orderedVariables.length; i++) {
+				t = t.replace('i18nExtendedVariable', String(orderedVariables[i]));
+			}
+			return t;
 		}
 
 		const tm = [];

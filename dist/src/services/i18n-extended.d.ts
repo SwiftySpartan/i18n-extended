@@ -12,6 +12,7 @@ export declare class i18nExtended {
     private isTranslation(text, source, variables?);
     private breakSentanceIntoChars(text);
     private removeInterpolation(text);
+    private fetchInterpolationNames(text);
     private hasInterpretation(text);
     private digestTranslation(ct, source, target, variables?);
 }

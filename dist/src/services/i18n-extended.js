@@ -147,6 +147,9 @@ var i18nExtended = /** @class */ (function () {
     i18nExtended.prototype.removeInterpolation = function (text) {
         return text.replace(/<x\b[^>]*>/g, 'i18nExtendedVariable');
     };
+    i18nExtended.prototype.fetchInterpolationNames = function (text) {
+        return text.match(/<x\b[^>]*>/g);
+    };
     i18nExtended.prototype.hasInterpretation = function (text) {
         var matches = text.match(/<x\b[^>]*>/g);
         if (!matches) {
@@ -163,8 +166,17 @@ var i18nExtended = /** @class */ (function () {
             return ct;
         }
         if (variables) {
-            for (var i = 0; i < variables.length; i++) {
-                t = t.replace('i18nExtendedVariable', String(variables[i]));
+            var sList = this.fetchInterpolationNames(source);
+            var tList = this.fetchInterpolationNames(target);
+            var orderedVariables = [];
+            if (tList && sList) {
+                // reorder list
+                for (var i = 0; i < variables.length; i++) {
+                    orderedVariables.splice(tList.indexOf(sList[i]), 0, String(variables[i]));
+                }
+            }
+            for (var i = 0; i < orderedVariables.length; i++) {
+                t = t.replace('i18nExtendedVariable', String(orderedVariables[i]));
             }
             return t;
         }
