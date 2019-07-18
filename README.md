@@ -1,4 +1,6 @@
-### Completing everything that is missing in Angular's i18n package
+#### Completing everything that is missing in Angular's i18n package
+![logo](https://raw.githubusercontent.com/SwiftySpartan/i18n-extended/master/angular.png)
+
 ___________
 # i18n-extended [![NPM version](https://img.shields.io/npm/v/@andrewwormald/i18n-extended.svg?style=flat)](https://www.npmjs.com/package/@andrewwormald/i18n-extended) [![NPM monthly downloads](https://img.shields.io/npm/dm/@andrewwormald/i18n-extended.svg?style=flat)](https://npmjs.org/package/@andrewwormald/i18n-extended) [![NPM total downloads](https://img.shields.io/npm/dt/@andrewwormald/i18n-extended.svg?style=flat)](https://npmjs.org/package/@andrewwormald/i18n-extended)
 ##### created by  Andrew Wormald
