@@ -1,11 +1,10 @@
 const fileManager = require("./file-manager");
 const Listr = require('listr');
 const rxjs = require('rxjs');
-const { red, white, green, bold, grey } = require('kleur');
+const { bold} = require('kleur');
 const process = require('process');
 const prompts = require('prompts');
 const fs = require('fs-extra');
-const cp = require("child_process");
 
 const tasks = new Listr([
     {

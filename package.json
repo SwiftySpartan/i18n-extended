@@ -1,6 +1,6 @@
 {
   "name": "@andrewwormald/i18n-extended",
-  "version": "1.4.0-beta.1",
+  "version": "1.4.0-beta.2",
   "description": "",
   "main": "dist/bundles/i18n-extended.umd.js",
   "scripts": {
@@ -22,11 +22,16 @@
   "author": "Andrew Wormald",
   "license": "MIT",
   "keywords": [
-    "Angular",
-    "CLI",
-    "i18n",
     "i18n-extended",
+    "angular translations",
+    "ng",
+    "translate",
+    "angular",
+    "i18n",
+    "ts",
     "i18n ts",
+    "Angular",
+    "cli",
     "translations",
     "angular translations"
   ],
