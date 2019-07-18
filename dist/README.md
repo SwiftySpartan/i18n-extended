@@ -1,4 +1,7 @@
+##### Completing everything that is missing in Angular's i18n package
+
 ![logo](https://raw.githubusercontent.com/SwiftySpartan/i18n-extended/master/angular.png)
+
 ___________
 # i18n-extended
 ##### created by  Andrew Wormald

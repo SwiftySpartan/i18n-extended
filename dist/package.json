@@ -6,7 +6,7 @@
   "scripts": {
     "cleanup": "rimraf dist/bundles dist/src dist/index.d.ts dist/index.js dist/index.js.map dist/LICENCE",
     "bundling": "rollup -c",
-    "minify": "uglifyjs dist/bundles/i18n-extended.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/i18n-extended.umd.min.js",
+    "minify": "uglifyjs dist/bundles/i18n-extended.umd.js --screw-ie8 --compress --mangle --output dist/bundles/i18n-extended.umd.min.js",
     "build": "npm run cleanup && ngc && npm run bundling && npm run minify"
   },
   "repository": {
@@ -52,7 +52,7 @@
     "rimraf": "^2.5.4",
     "rollup": "^0.37.0",
     "typescript": "~2.7.2",
-    "uglify-js": "^2.7.5"
+    "uglify-js": "~3.3.18"
   },
   "bugs": {
     "url": "https://github.com/SwiftySpartan/i18n-extended/issues"
