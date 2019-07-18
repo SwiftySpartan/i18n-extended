@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="368b2f60-dc20-4286-b86c-9ead097740b5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/bundles/i18n-extended.umd.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/bundles/i18n-extended.umd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/bundles/i18n-extended.umd.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/bundles/i18n-extended.umd.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/dist/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/cli/file-manager.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/cli/i18n-extended-cli.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/src/services/i18n-extended.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/src/services/i18n-extended.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/src/services/i18n-extended.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended.metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/dist/src/services/i18n-extended.metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/services/i18n-extended.ngsummary.json" beforeDir="false" afterPath="$PROJECT_DIR$/dist/src/services/i18n-extended.ngsummary.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/file-manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/file-manager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/i18n-extended.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/i18n-extended.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +99,7 @@
           <entry key="Bash" value="4" />
           <entry key="Enforced Plain Text" value="72" />
           <entry key="HTML" value="47" />
-          <entry key="JSON" value="715" />
+          <entry key="JSON" value="716" />
           <entry key="JavaScript" value="17327" />
           <entry key="Markdown" value="1938" />
           <entry key="PLAIN_TEXT" value="30" />
@@ -156,20 +143,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dist/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="46">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+              <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="46">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+              <caret line="2" column="14" lean-forward="true" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -291,8 +278,8 @@
         <option value="$PROJECT_DIR$/src/services/i18n-extended.ts" />
         <option value="$PROJECT_DIR$/src/cli/file-manager.js" />
         <option value="$PROJECT_DIR$/src/cli/i18n-extended-cli.js" />
-        <option value="$PROJECT_DIR$/dist/package.json" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/dist/package.json" />
       </list>
     </option>
   </component>
@@ -333,7 +320,7 @@
             <path>
               <item name="i18n-extended" type="b2602c69:ProjectViewProjectNode" />
               <item name="i18n-extended" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -457,18 +444,18 @@
       <workItem from="1563346659207" duration="18440000" />
       <workItem from="1563395158489" duration="5271000" />
       <workItem from="1563420872655" duration="4209000" />
-      <workItem from="1563432861812" duration="10546000" />
+      <workItem from="1563432861812" duration="10649000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="183999000" />
+    <option name="totallyTimeSpent" value="184102000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49919742" visible="true" weight="0.25751072" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49919742" visible="true" weight="0.25751072" />
       <window_info id="Structure" order="1" sideWeight="0.5008026" side_tool="true" weight="0.21030043" />
       <window_info id="Designer" order="2" />
       <window_info id="Learn" order="3" />
@@ -484,7 +471,7 @@
       <window_info anchor="bottom" id="TypeScript" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50214595" side_tool="true" weight="0.23464373" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32923833" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49785408" visible="true" weight="0.22850123" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49785408" visible="true" weight="0.22850123" />
       <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.32923833" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -829,17 +816,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <caret line="2" column="14" lean-forward="true" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
         </state>
       </provider>
     </entry>
