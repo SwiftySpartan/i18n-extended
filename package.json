@@ -41,6 +41,7 @@
     "kleur": "^3.0.3",
     "listr": "^0.14.3",
     "node-cmd": "^3.0.0",
+    "node-flag": "^1.5.1",
     "prompts": "^2.1.0",
     "recursive-readdir": "^2.2.2",
     "reflect-metadata": "^0.1.8",

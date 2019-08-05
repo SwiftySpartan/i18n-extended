@@ -117,13 +117,39 @@ module.exports = {
             cs = cs.replace(regex, "");
 
             let equivilentText = 'DO NOT DELETE';
+
+            // detect if an anchor tag
+            const aTags = cs.match(/<\s*a[^>]*>(.*?)<*\s*a>/g);
+            if (aTags) {
+                for (let i = 0; i < aTags.length; i++) {
+                    let content = aTags[i].split('<')[1].split('>')[1].split('<')[0]; // pruned
+                    const matches = aTags[i].match(/\${.*?}/g);
+                    if (matches) {
+                        for (let i = 0; i < matches.length; i++) {
+                            equivilentText = matches[i].replace('${', '').replace('}', '');
+                            if (equivilentText) {
+                                cs = cs.replace(/\${.*?}/g, equivilentText);
+                            }
+                        }
+                    }
+                    cs = cs.replace(/<\s*a[^>]*>(.*?)<*\s*a>/g, `<x id="START_LINK" ctype="x-a" equiv-text="i18nExtendedLink"/>${content}<x id="CLOSE_LINK" ctype="x-a" equiv-text="i18nExtendedLink"/>`);
+                }
+            }
+
+            // if its a ${} variable declaration
             const matches = cs.match(/\${.*?}/g);
             if (matches) {
                 for (let i = 0; i < matches.length; i++) {
-                    equivilentText = matches[i].replace('${', '').replace('}', '')
+                    equivilentText = matches[i].replace('${', '').replace('}', '');
+                    if (equivilentText) {
+                        cs = cs.replace(/\${.*?}/g, `<x id="INTERPOLATION" equiv-text="${equivilentText}"/>`);
+                    }
                 }
             }
-            cs = cs.replace(/\${.*?}/g, `<x id="INTERPOLATION" equiv-text="${equivilentText}"/>`);
+
+            // protect xml integrity by removing any left over tags
+            // cs = cs.replace(/<[^>]*>/g, '');
+
             parsedObject['text'] = cs;
             return parsedObject;
         });
