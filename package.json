@@ -1,6 +1,6 @@
 {
   "name": "@andrewwormald/i18n-extended",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "",
   "main": "dist/bundles/i18n-extended.umd.js",
   "scripts": {
